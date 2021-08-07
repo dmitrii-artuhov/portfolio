@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Styles -->
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/default.css">
+	<link rel="stylesheet" href="./css/mixins.css">
+	<link rel="stylesheet" href="./css/variables.css">
+	<link rel="stylesheet" href="./css/animations.css">
+	
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./webkit/fonts/stylesheet.css">
+
+	<!-- Parallax.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+	<title>Portfolio</title>
+</head>
+<body>
+	<header class="header">
+		<div class="container header__container">
+			<div class="header__wrapper">
+				<a href="/" class="header__logo">
+					<img src="./imgs/logo.svg" alt="logo">
+				</a>
+				<div class="header__modal-btn">
+					<span></span>
+					<span></span>
+				</div>
+				<div class="header__nav">
+					<a href="#footer" class="header__item">
+						контакты
+						<span></span>
+						<span></span>
+					</a>
+					<a href="#blog" class="header__item">
+						блог
+						<span></span>
+						<span></span>
+					</a>
+					<a href="#projects" class="header__item">
+						работы
+						<span></span>
+						<span></span>
+					</a>
+			</div>
+		</div>
+	</header>
+
+	<section class="about">
+		<div style="max-width: 1400px;" class="container">
+			<div id="scene-1" class="about__wrapper">
+				<div data-offset-x="450" data-offset-y="0" data-depth="0.4" class="about__picture">
+					<img src="./imgs/anime-waifu.png" alt="waifu">
+				</div>
+
+				<div data-offset-x="120" data-offset-y="80" data-depth="0.5" class="about__term terminal">
+					<div class="terminal__header">
+						<div class="terminal__controls">
+							<button class="terminal__close"></button>
+							<button class="terminal__minimize"></button>
+							<button class="terminal__maximize"></button>
+						</div>
+					</div>
+
+					<div class="terminal__body">
+						<p>
+							<span class="text-swap">
+							Processes: 210 total, 2 running, 9 stuck, 199 sleeping, 901 threads    23:30:03 <br>
+							Load Avg: 1.40, 1.75, 1.00  CPU usage: 4.15% user, 4.40% sys, 91.44% idle <br>
+							Networks: packets: 12105/8925K in, 11907/1964 K out. <br>
+							Disks: 80156/2205M read, 21235/425M written. <br>
+							<br>
+							Dmitrii-MacBook-Desctop:~ geek$ <br>
+							<br>
+							[dmitrii@art ~]$ <br>
+							[dmitrii@art ~]$ Welcome to my web site!
+							<!-- <span class="highlight-text">ﾐﾋｰｳｼﾅﾓﾆｻﾜﾐﾋｰｳｼﾅﾓﾆｻﾜ</span> -->
+							<br>
+							[dmitrii@art ~]$</span> <span class="txt-type" data-wait="3000" data-words='["Enjoy!", "Or may be not...", "What am I doing?!"]'></span> <br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section style="margin-top: 400px;" class="projects" id="projects">
+		<div class="container">
+			<h2>Projects</h2>
+			<div class="projects__categories">
+				<div class="projects__item" style="border: 1px solid #737373"><p>All</p></div>
+				<button class="projects__item projects__item-selected" style="background: #44883E"><p>NodeJS</p></button>
+				<button class="projects__item" style="border: 1px solid #53C1DF"><p>React</p></button>
+				<button class="projects__item" style="border: 1px solid #764ABC"><p>Redux</p></button>
+				<button class="projects__item" style="border: 1px solid #0087BE"><p>Wordpress</p></button>
+				<button class="projects__item" style="border: 1px solid #2D72D9"><p>UI/UX</p></button>
+				<button class="projects__item" style="border: 1px solid #F0DB4F"><p>Javascript</p></button>
+			</div>
+			
+			<div class="projects__content">
+				<div class="projects__case">
+					<div class="projects__block">
+						<div class="projects__fade"></div>
+						<div class="projects__details">
+							<div class="projects__info">
+								<h5>Full-stack Web Application</h5>
+								<div class="projects__tags">	
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+								</div>
+							</div>
+							<a href="#"><button class="projects__button button">more</button></a>
+						</div>
+						<img src="./imgs/project.jpg" alt="img">
+					</div>
+					
+				</div>
+				<div class="projects__case">
+					<div class="projects__block">
+						<div class="projects__fade"></div>
+						<div class="projects__details">
+							<div class="projects__info">
+								<h5>Full-stack Web Application</h5>
+								<div class="projects__tags">	
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+								</div>
+							</div>
+							<a href="#"><button class="projects__button button">more</button></a>
+						</div>
+						<img src="./imgs/project.jpg" alt="img">
+					</div>
+				</div>
+				<div class="projects__case">
+					<div class="projects__block">
+						<div class="projects__fade"></div>
+						<div class="projects__details">
+							<div class="projects__info">
+								<h5>Full-stack Web Application</h5>
+								<div class="projects__tags">	
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+								</div>
+							</div>
+							<a href="#"><button class="projects__button button">more</button></a>
+						</div>
+						<img src="./imgs/project.jpg" alt="img">
+					</div>
+				</div>
+				<div class="projects__case">
+					<div class="projects__block">
+						<div class="projects__fade"></div>
+						<div class="projects__details">
+							<div class="projects__info">
+								<h5>Full-stack Web Application</h5>
+								<div class="projects__tags">	
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+									<div class="projects__item projects__tag" style="background: #44883E"><p>NodeJS</p></div>
+									<div class="projects__item projects__tag" style="background: #53C1DF"><p>React</p></div>
+								</div>
+							</div>
+							<a href="#"><button class="projects__button button">more</button></a>
+						</div>
+						<img src="./imgs/project.jpg" alt="img">
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer" id="footer">
+		<div class="container">
+			<h2>Reach out</h2>
+			<div class="footer__socials">
+				<a href="#" class="footer__link"><p>Github<i class="fab fa-github"></i></p></a>
+				<a href="#" class="footer__link"><p>Telegram<i class="fab fa-telegram-plane"></i></p></a>
+				<a href="#" class="footer__link"><p>Gmail<i class="fab fa-google"></i></p></a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="./js/utils.js"></script>
+	<script src="./js/index.js"></script>
+	<script src="./js/animations.js"></script>
+	<script src="https://kit.fontawesome.com/2fd836de1e.js" crossorigin="anonymous"></script>
+
+	<!-- Libs -->
+	<script src="libs/parallax-js/parallax.js"></script>
+	<script src="libs/tilt-js/tilt.min.js"></script>
+</body>
+</html>

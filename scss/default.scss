@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+body, html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-family: $main-font;
+	background-color: #000;
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.container {
+	box-sizing: border-box;
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.button {
+	outline: none;
+	border: none;
+	color: #000;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+
+.highlight {
+	&-text {
+		color: $accent-light-color;
+	}
+}

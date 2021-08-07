@@ -1,0 +1,23 @@
+@keyframes navbar-item-slide {
+	0% {
+		transform: translateX(calc(-100% - 5px));
+	}
+
+	40% {
+		transform: translateX(0);
+	}
+
+	60% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(calc(100% + 10px));	
+	}
+}
+
+@keyframes terminal-cursor {
+	to {
+    visibility: hidden;
+  }
+}

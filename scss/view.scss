@@ -1,0 +1,141 @@
+$header-color: #0D0D0D;
+$bg-color: #262626;
+$accent-color: #F2F2F2;
+
+// 
+.view {
+	margin: 0;
+
+	&__wrapper {
+		padding: 40px 10px;
+		box-sizing: border-box;
+	}
+
+	&__info {
+		font-family: 'Montserrat', sans-serif;
+		flex-basis: 60%;
+
+		h1 {
+			margin: 0 0 15px 0;
+			color: #fff;
+			letter-spacing: 1px;
+			font-size: 30px;
+		}
+
+		p {
+			margin: 15px 0;
+			color: #fff;
+			opacity: .7;
+			font-size: 16px;
+			line-height: 150%;
+			max-width: 450px;
+		}
+	}
+
+	&__button {
+		padding: 12px 18px;
+		margin: 10px 5px;
+		font-weight: bold;
+		font-size: 12px;
+		text-transform: uppercase;
+		background-color: $accent-color;
+		border-radius: 5px;
+	}
+}
+
+
+// show
+.show {
+	margin-bottom: 50px;
+}
+
+// desc
+.desc {
+	&__wrapper {
+		padding: 40px 10px 0 10px;
+		box-sizing: border-box;
+	}
+
+	&__about {
+		font-family: 'Montserrat', sans-serif;
+
+		h3 {
+			margin: 0 0 15px 0;
+			color: #fff;
+			letter-spacing: 1px;
+			font-size: 25px;
+		}
+
+		p {
+			margin: 20px 0;
+			color: #fff;
+			opacity: .7;
+			font-size: 16px;
+			line-height: 150%;
+			max-width: 800px;
+		}
+	}
+
+	&__tech {
+		font-family: 'Montserrat', sans-serif;
+		margin-top: 50px;
+
+		h3 {
+			margin: 0 0 15px 0;
+			color: #fff;
+			letter-spacing: 1px;
+			font-size: 25px;
+		}
+	}
+
+	&__langs {
+		padding: 0;
+		list-style: none;
+
+		li {
+			color: #fff;
+			position: relative;
+			display: flex;
+			align-items: center;
+			opacity: .5;
+			margin: 10px 0;
+
+			&::before {
+				content: '';
+				position: relative;
+				margin-right: 10px;
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				background-color: $accent-color;
+			}
+		}
+	}
+}
+
+/* external css: flickity.css */
+
+.carousel {
+  background: $bg-color;
+}
+
+.carousel-cell {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.carousel-cell img {
+  display: block;
+  height: 200px;
+}
+
+@media screen and ( min-width: 768px ) {
+  .carousel-cell img {
+    height: 400px;
+  }
+}
+
+.flickity-button {
+	width: 30px !important;
+	height: 30px !important;
+} 
