@@ -9,6 +9,11 @@ body, html {
 	scroll-behavior: smooth;
 }
 
+.wrapper {
+	overflow-x: hidden;
+	position: relative;
+}
+
 body {
 	overflow-x: hidden;
 }
