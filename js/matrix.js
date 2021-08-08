@@ -3,6 +3,7 @@
 var streams = [];
 var fadeInterval = 1.6;
 var symbolSize = 20;
+var spawnRate = 3;
 var canvasParent = document.querySelector('#about');
 
 var minStreamSpeed = 2;
@@ -23,7 +24,7 @@ function setup() {
 	
 	var x = 0;
 	for (var i = 0; i <= width / symbolSize; i++) {
-		if (round(getRandomNumber(0, 2)) === 1) {
+		if (i % spawnRate == 0) {
 			var stream = new Stream();
 			stream.generateSymbols(x, getRandomNumber(-2000, 0));
 			streams.push(stream);

@@ -266,7 +266,7 @@
   overflow: hidden;
   max-width: 800px;
   max-height: 470px;
-  background-color: #1C1C1C;
+  background-color: rgba(28, 28, 28, 0.8);
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -336,15 +336,30 @@
 
 .projects {
   color: #fff;
-  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media only screen and (max-width: 992px) {
+  .projects {
+    margin-top: 150px;
+  }
 }
 
 .projects h2 {
-  font-size: 30px;
-  font-weight: 300;
+  font-size: 56px;
+  font-weight: 900;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+@media only screen and (max-width: 576px) {
+  .projects h2 {
+    font-size: 36px;
+  }
 }
 
 .projects__categories {
+  margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -354,18 +369,21 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
-.projects__item {
+.projects__cat-item {
   cursor: pointer;
-  padding: 8px 15px;
   background-color: transparent;
-  color: #fff;
-  border: none;
+  color: #30E52F;
+  border: 1px solid #30E52F;
   outline: none;
+  border-radius: 4px;
+  overflow: hidden;
+  min-width: 120px;
+  font-weight: bold;
+  padding: 8px 30px;
+  font-size: 16px;
+  margin: 0 10px 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -375,33 +393,31 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 10px 10px 0 0;
-  font-size: 14px;
-  border-radius: 4px;
   position: relative;
-  overflow: hidden;
 }
 
-.projects__item p {
+.projects__cat-item:hover {
+  color: #fff;
+  background-color: rgba(48, 229, 47, 0.3);
+}
+
+.projects__cat-item p {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Consolas", sans-serif;
 }
 
-.projects__circle {
-  display: block;
-  background-color: red;
-  border-radius: 50%;
-  position: absolute;
-  -webkit-animation: pulse 0.4s ease-in;
-          animation: pulse 0.4s ease-in;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  z-index: 10;
+.projects__cat-item-selected {
+  color: #fff;
+  background-color: rgba(48, 229, 47, 0.3);
 }
 
 .projects__content {
-  margin-top: 100px;
+  -webkit-perspective: 1400px;
+          perspective: 1400px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  margin-top: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -420,6 +436,31 @@
       flex-basis: 550px;
   height: 100%;
   max-height: 350px;
+  text-align: center;
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+.projects__case:nth-child(odd) {
+  -webkit-transform: translateZ(-20px) rotateY(10deg) scale(0.95);
+          transform: translateZ(-20px) rotateY(10deg) scale(0.95);
+}
+
+.projects__case:nth-child(even) {
+  -webkit-transform: translateZ(-20px) rotateY(-10deg) scale(0.95);
+          transform: translateZ(-20px) rotateY(-10deg) scale(0.95);
+}
+
+.projects__case:hover {
+  -webkit-transform: translateZ(0) rotateY(0deg) scale(1);
+          transform: translateZ(0) rotateY(0deg) scale(1);
+}
+
+@media only screen and (max-width: 1200px) {
+  .projects__case {
+    -webkit-transform: translateZ(0) rotateY(0deg) scale(1) !important;
+            transform: translateZ(0) rotateY(0deg) scale(1) !important;
+  }
 }
 
 .projects__block {
@@ -441,7 +482,7 @@
 }
 
 .projects__block:hover .projects__fade {
-  opacity: .7;
+  opacity: .85;
   z-index: 1;
 }
 
@@ -502,13 +543,17 @@
   opacity: 0;
   -webkit-transition: .2s ease-in;
   transition: .2s ease-in;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(1000px);
+          transform: perspective(1000px);
 }
 
 .projects__info h5 {
   -webkit-transform: translateY(-50px);
           transform: translateY(-50px);
-  font-size: 16px;
-  margin: 15px 0 100px 0;
+  font-size: 20px;
+  margin: 15px 0 30px 0;
   opacity: 1;
   -webkit-transition: .2s ease-in;
   transition: .2s ease-in;
@@ -531,7 +576,9 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 80%;
-  margin: 30px auto 0 auto;
+  margin: 0 auto;
+  -webkit-transform: translateZ(30px);
+          transform: translateZ(30px);
 }
 
 @media only screen and (max-width: 576px) {
@@ -542,29 +589,72 @@
 }
 
 .projects__tag {
-  padding: 5px 10px;
-  font-size: 12px;
-  margin: 5px 5px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #30E52F;
+  border: 1px solid #30E52F;
+  outline: none;
+  border-radius: 4px;
+  overflow: hidden;
   opacity: 0;
   -webkit-transform: translateY(-15px);
           transform: translateY(-15px);
-  -webkit-transition: .1s ease-in;
-  transition: .1s ease-in;
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  margin: 7px 5px;
+  padding: 5px 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 12.5px;
+}
+
+.projects__tag:hover {
+  color: #fff;
+  background-color: rgba(48, 229, 47, 0.3);
+}
+
+@media only screen and (max-width: 576px) {
+  .projects__tag {
+    margin: 3px;
+    padding: 5px 10px;
+    font-size: 9px;
+  }
+}
+
+.projects__tag p {
+  padding: 0;
+  margin: 0;
 }
 
 .projects__button {
   cursor: pointer;
+  background-color: transparent;
+  color: #30E52F;
+  border: 1px solid #30E52F;
+  outline: none;
+  border-radius: 4px;
+  overflow: hidden;
   padding: 10px 18px;
+  color: #30E52F;
+  font-size: 12.5px;
+  min-width: 120px;
   margin: 10px 5px;
-  font-weight: bold;
-  font-size: 11px;
-  text-transform: uppercase;
-  background-color: #30E52F;
-  border-radius: 5px;
+  border: 1px solid #30E52F;
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
-  -webkit-transition: .2s ease-in;
-  transition: .2s ease-in;
+  -webkit-transition: -webkit-transform .2s ease-in;
+  transition: -webkit-transform .2s ease-in;
+  transition: transform .2s ease-in;
+  transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+}
+
+.projects__button:hover {
+  color: #fff;
+  background-color: rgba(48, 229, 47, 0.3);
 }
 
 @media only screen and (max-width: 576px) {
@@ -574,144 +664,91 @@
   }
 }
 
-/*
 .footer {
-	text-align: center;
-	color: #fff;
-	margin: 70px 0;
-
-	h2 {
-		font-size: 30px;
-		font-weight: 300;
-	}
-
-	&__socials {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		
-		@include media('max', 'sm') {
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
-	}
-
-	&__link {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 5px;
-		width: 150px;
-		height: 40px;
-		background-color: $accent-color;
-		margin: 0 10px;
-		text-decoration: none;
-		font-family: 'Open Sans', sans-serif;
-
-		
-		@include media('max', 'sm') {
-			margin-top: 10px;
-		}
-
-		p {
-			margin: 0;
-			padding: 0;
-		}
-
-		i {
-			font-size: 18px;
-			margin: 0;
-			padding: 0;
-			margin-left: 10px;
-		}
-	}
-
-	&__link:nth-child(1) {
-		background-color: #F5F5F5;
-		color: #000;
-	}
-	
-	&__link:nth-child(2) {
-		background-color: #0088CC;
-		color: #fff;
-	}
-	
-	&__link:nth-child(3) {
-		background-color: #DD4B39;
-		color: #fff;
-	}
+  text-align: center;
+  margin-top: 70px;
 }
-*/
-@-webkit-keyframes popUp {
-  0% {
-    -webkit-transform: translateY(-15px);
-            transform: translateY(-15px);
-  }
-  30% {
-    -webkit-transform: translateY(-7px);
-            transform: translateY(-7px);
-  }
-  50% {
-    -webkit-transform: tarnslateY(0px);
-            transform: tarnslateY(0px);
-  }
-  99% {
-    -webkit-transform: translateY(2px);
-            transform: translateY(2px);
-  }
-  100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
+
+.footer h2 {
+  font-size: 56px;
+  font-weight: 900;
+  margin-bottom: 0;
+  color: #fff;
+  text-align: left;
 }
-@keyframes popUp {
-  0% {
-    -webkit-transform: translateY(-15px);
-            transform: translateY(-15px);
-  }
-  30% {
-    -webkit-transform: translateY(-7px);
-            transform: translateY(-7px);
-  }
-  50% {
-    -webkit-transform: tarnslateY(0px);
-            transform: tarnslateY(0px);
-  }
-  99% {
-    -webkit-transform: translateY(2px);
-            transform: translateY(2px);
-  }
-  100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+
+@media only screen and (max-width: 576px) {
+  .footer h2 {
+    font-size: 36px;
   }
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(3);
-            transform: scale(3);
-    background-color: #fff;
-    opacity: 0;
+.footer__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+@media only screen and (max-width: 576px) {
+  .footer__socials {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 30px;
   }
 }
 
-@keyframes pulse {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+.footer__link {
+  cursor: pointer;
+  background-color: transparent;
+  color: #30E52F;
+  border: 1px solid #30E52F;
+  outline: none;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  margin: 0 7.5px;
+}
+
+.footer__link:hover {
+  color: #fff;
+  background-color: rgba(48, 229, 47, 0.3);
+}
+
+@media only screen and (max-width: 576px) {
+  .footer__link {
+    margin: 7.5px 0;
   }
-  100% {
-    -webkit-transform: scale(3);
-            transform: scale(3);
-    background-color: #fff;
-    opacity: 0;
-  }
+}
+
+.footer__link p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 10px 40px;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Consolas", sans-serif;
+}
+
+.footer__link p svg {
+  margin-left: 10px;
+  width: 25px !important;
+  height: 25px !important;
+  color: #fff;
 }
 
 .terminal {
@@ -897,216 +934,216 @@
 
 @-webkit-keyframes noise-anim-1 {
   0% {
-    clip: rect(8px, 9999px, 5px, 0);
+    clip: rect(6px, 9999px, 4px, 0);
   }
   2.5% {
-    clip: rect(4px, 9999px, 1px, 0);
+    clip: rect(6px, 9999px, 5px, 0);
   }
   5% {
-    clip: rect(5px, 9999px, 5px, 0);
+    clip: rect(3px, 9999px, 10px, 0);
   }
   7.5% {
-    clip: rect(4px, 9999px, 8px, 0);
+    clip: rect(9px, 9999px, 4px, 0);
   }
   10% {
-    clip: rect(5px, 9999px, 7px, 0);
+    clip: rect(7px, 9999px, 4px, 0);
   }
   12.5% {
-    clip: rect(7px, 9999px, 10px, 0);
+    clip: rect(8px, 9999px, 4px, 0);
   }
   15% {
     clip: rect(9px, 9999px, 9px, 0);
   }
   17.5% {
-    clip: rect(1px, 9999px, 2px, 0);
+    clip: rect(2px, 9999px, 7px, 0);
   }
   20% {
-    clip: rect(1px, 9999px, 3px, 0);
+    clip: rect(10px, 9999px, 1px, 0);
   }
   22.5% {
-    clip: rect(4px, 9999px, 5px, 0);
+    clip: rect(1px, 9999px, 5px, 0);
   }
   25% {
-    clip: rect(4px, 9999px, 10px, 0);
+    clip: rect(9px, 9999px, 2px, 0);
   }
 }
 
 @keyframes noise-anim-1 {
   0% {
-    clip: rect(8px, 9999px, 5px, 0);
+    clip: rect(6px, 9999px, 4px, 0);
   }
   2.5% {
-    clip: rect(4px, 9999px, 1px, 0);
+    clip: rect(6px, 9999px, 5px, 0);
   }
   5% {
-    clip: rect(5px, 9999px, 5px, 0);
+    clip: rect(3px, 9999px, 10px, 0);
   }
   7.5% {
-    clip: rect(4px, 9999px, 8px, 0);
+    clip: rect(9px, 9999px, 4px, 0);
   }
   10% {
-    clip: rect(5px, 9999px, 7px, 0);
+    clip: rect(7px, 9999px, 4px, 0);
   }
   12.5% {
-    clip: rect(7px, 9999px, 10px, 0);
+    clip: rect(8px, 9999px, 4px, 0);
   }
   15% {
     clip: rect(9px, 9999px, 9px, 0);
   }
   17.5% {
-    clip: rect(1px, 9999px, 2px, 0);
+    clip: rect(2px, 9999px, 7px, 0);
   }
   20% {
-    clip: rect(1px, 9999px, 3px, 0);
+    clip: rect(10px, 9999px, 1px, 0);
   }
   22.5% {
-    clip: rect(4px, 9999px, 5px, 0);
+    clip: rect(1px, 9999px, 5px, 0);
   }
   25% {
-    clip: rect(4px, 9999px, 10px, 0);
+    clip: rect(9px, 9999px, 2px, 0);
   }
 }
 
 @-webkit-keyframes noise-anim-2 {
   0% {
-    clip: rect(2px, 9999px, 4px, 0);
-  }
-  5% {
     clip: rect(3px, 9999px, 3px, 0);
   }
+  5% {
+    clip: rect(1px, 9999px, 4px, 0);
+  }
   10% {
-    clip: rect(5px, 9999px, 3px, 0);
+    clip: rect(1px, 9999px, 3px, 0);
   }
   15% {
-    clip: rect(2px, 9999px, 1px, 0);
+    clip: rect(2px, 9999px, 5px, 0);
   }
   20% {
-    clip: rect(1px, 9999px, 3px, 0);
-  }
-  25% {
     clip: rect(2px, 9999px, 1px, 0);
   }
+  25% {
+    clip: rect(2px, 9999px, 4px, 0);
+  }
   30% {
-    clip: rect(5px, 9999px, 4px, 0);
+    clip: rect(1px, 9999px, 4px, 0);
   }
   35% {
-    clip: rect(4px, 9999px, 1px, 0);
+    clip: rect(3px, 9999px, 1px, 0);
   }
   40% {
-    clip: rect(3px, 9999px, 4px, 0);
+    clip: rect(5px, 9999px, 2px, 0);
   }
   45% {
-    clip: rect(1px, 9999px, 3px, 0);
+    clip: rect(1px, 9999px, 4px, 0);
   }
   50% {
-    clip: rect(4px, 9999px, 3px, 0);
+    clip: rect(2px, 9999px, 2px, 0);
   }
 }
 
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(2px, 9999px, 4px, 0);
-  }
-  5% {
     clip: rect(3px, 9999px, 3px, 0);
   }
+  5% {
+    clip: rect(1px, 9999px, 4px, 0);
+  }
   10% {
-    clip: rect(5px, 9999px, 3px, 0);
+    clip: rect(1px, 9999px, 3px, 0);
   }
   15% {
-    clip: rect(2px, 9999px, 1px, 0);
+    clip: rect(2px, 9999px, 5px, 0);
   }
   20% {
-    clip: rect(1px, 9999px, 3px, 0);
-  }
-  25% {
     clip: rect(2px, 9999px, 1px, 0);
   }
+  25% {
+    clip: rect(2px, 9999px, 4px, 0);
+  }
   30% {
-    clip: rect(5px, 9999px, 4px, 0);
+    clip: rect(1px, 9999px, 4px, 0);
   }
   35% {
-    clip: rect(4px, 9999px, 1px, 0);
+    clip: rect(3px, 9999px, 1px, 0);
   }
   40% {
-    clip: rect(3px, 9999px, 4px, 0);
+    clip: rect(5px, 9999px, 2px, 0);
   }
   45% {
-    clip: rect(1px, 9999px, 3px, 0);
+    clip: rect(1px, 9999px, 4px, 0);
   }
   50% {
-    clip: rect(4px, 9999px, 3px, 0);
+    clip: rect(2px, 9999px, 2px, 0);
   }
 }
 
 @-webkit-keyframes noise-anim-3 {
   0% {
-    clip: rect(2px, 9999px, 10px, 0);
+    clip: rect(1px, 9999px, 5px, 0);
   }
   0.625% {
-    clip: rect(5px, 9999px, 10px, 0);
+    clip: rect(1px, 9999px, 4px, 0);
   }
   1.25% {
-    clip: rect(3px, 9999px, 4px, 0);
+    clip: rect(10px, 9999px, 9px, 0);
   }
   1.875% {
-    clip: rect(5px, 9999px, 9px, 0);
+    clip: rect(9px, 9999px, 7px, 0);
   }
   2.5% {
-    clip: rect(2px, 9999px, 6px, 0);
+    clip: rect(4px, 9999px, 10px, 0);
   }
   3.125% {
-    clip: rect(2px, 9999px, 10px, 0);
-  }
-  3.75% {
-    clip: rect(1px, 9999px, 6px, 0);
-  }
-  4.375% {
-    clip: rect(9px, 9999px, 8px, 0);
-  }
-  5% {
-    clip: rect(3px, 9999px, 5px, 0);
-  }
-  5.625% {
     clip: rect(7px, 9999px, 2px, 0);
   }
+  3.75% {
+    clip: rect(3px, 9999px, 1px, 0);
+  }
+  4.375% {
+    clip: rect(10px, 9999px, 4px, 0);
+  }
+  5% {
+    clip: rect(5px, 9999px, 8px, 0);
+  }
+  5.625% {
+    clip: rect(8px, 9999px, 9px, 0);
+  }
   6.25% {
-    clip: rect(4px, 9999px, 9px, 0);
+    clip: rect(1px, 9999px, 7px, 0);
   }
 }
 
 @keyframes noise-anim-3 {
   0% {
-    clip: rect(2px, 9999px, 10px, 0);
+    clip: rect(1px, 9999px, 5px, 0);
   }
   0.625% {
-    clip: rect(5px, 9999px, 10px, 0);
+    clip: rect(1px, 9999px, 4px, 0);
   }
   1.25% {
-    clip: rect(3px, 9999px, 4px, 0);
+    clip: rect(10px, 9999px, 9px, 0);
   }
   1.875% {
-    clip: rect(5px, 9999px, 9px, 0);
+    clip: rect(9px, 9999px, 7px, 0);
   }
   2.5% {
-    clip: rect(2px, 9999px, 6px, 0);
+    clip: rect(4px, 9999px, 10px, 0);
   }
   3.125% {
-    clip: rect(2px, 9999px, 10px, 0);
-  }
-  3.75% {
-    clip: rect(1px, 9999px, 6px, 0);
-  }
-  4.375% {
-    clip: rect(9px, 9999px, 8px, 0);
-  }
-  5% {
-    clip: rect(3px, 9999px, 5px, 0);
-  }
-  5.625% {
     clip: rect(7px, 9999px, 2px, 0);
   }
+  3.75% {
+    clip: rect(3px, 9999px, 1px, 0);
+  }
+  4.375% {
+    clip: rect(10px, 9999px, 4px, 0);
+  }
+  5% {
+    clip: rect(5px, 9999px, 8px, 0);
+  }
+  5.625% {
+    clip: rect(8px, 9999px, 9px, 0);
+  }
   6.25% {
-    clip: rect(4px, 9999px, 9px, 0);
+    clip: rect(1px, 9999px, 7px, 0);
   }
 }

@@ -171,7 +171,7 @@
 		overflow: hidden;
 		max-width: 800px;
 		max-height: 470px;
-		background-color: $image-mock-color;
+		background-color: rgba(28, 28, 28, 0.8);
 		display: flex !important;
 
 		&.no-parallax {
@@ -223,55 +223,52 @@
 // projects
 .projects {
 	color: #fff;
-	text-align: center;
+	font-family: $main-font;
+
+	@include media('max', 'lg') {
+		margin-top: 150px;
+	}
 
 	h2 {
-		font-size: 30px;
-		font-weight: 300;
+		@include main-title;
 	}
 
 	&__categories {
+		margin-top: 30px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: center;
 	}
 
-	&__item {
-		cursor: pointer;
-		padding: 8px 15px;
-		background-color: transparent;
-		color: #fff;
-		border: none;
-		outline: none;
+	&__cat-item {
+		@include accent-button;
+
+		min-width: 120px;
+		font-weight: bold;
+		padding: 8px 30px;
+		font-size: $category-size;
+		margin: 0 10px 10px 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin: 10px 10px 0 0;
-		font-size: 14px;
-		border-radius: 4px;
 		position: relative;
-		overflow: hidden;
 
 		p {
 			padding: 0;
 			margin: 0;
-			font-family: 'Montserrat', sans-serif;
+			font-family: $term-font;
+		}
+
+		&-selected {
+			color: #fff;
+			background-color: $accent-faded-color;
 		}
 	}
 
-	&__circle {
-		display: block;
-		background-color: red;
-		border-radius: 50%;
-		position: absolute;
-		animation: pulse 0.4s ease-in;
-		transform: scale(0);
-		z-index: 10;
-	}
-
 	&__content {
-		margin-top: 100px;
+		perspective: 1400px;
+		transform-style: preserve-3d;		
+		margin-top: 70px;
 		display: flex;
 		justify-content: space-around;
 		flex-wrap: wrap;
@@ -284,6 +281,25 @@
 		flex-basis: 550px;
 		height: 100%;
 		max-height: 350px;
+		text-align: center;
+		transition: .1s ease-in-out;
+
+		&:nth-child(odd) {
+			transform: translateZ(-20px) rotateY(10deg) scale(0.95);
+		}
+		
+		&:nth-child(even) {
+			transform: translateZ(-20px) rotateY(-10deg) scale(0.95);
+		}
+
+		&:hover {
+			transform: translateZ(0) rotateY(0deg) scale(1);
+		}
+
+		@include media('max', 'xl') {
+
+			transform: translateZ(0) rotateY(0deg) scale(1) !important;
+		}
 	}
 
 	&__block {
@@ -291,7 +307,6 @@
 		width: 100%;
 		padding-top: 58%;
 		height: 100%;
-		// cursor: pointer;
 
 		img {
 			z-index: 0;
@@ -305,7 +320,7 @@
 	}
 
 	&__block:hover &__fade {
-		opacity: .7;
+		opacity: .85;
 		z-index: 1;
 	}
 
@@ -352,13 +367,18 @@
 		display: flex;
 		opacity: 0;
 		transition: .2s ease-in;
+
+		
+		transform-style: preserve-3d;
+		transform: perspective(1000px);
+
 	}
 
 	&__info {
 		h5 {
 			transform: translateY(-50px);
-			font-size: 16px;
-			margin: 15px 0 100px 0;
+			font-size: $project-title-size;
+			margin: 15px 0 30px 0;
 			opacity: 1;
 			transition: .2s ease-in;
 
@@ -374,7 +394,9 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		width: 80%;
-		margin: 30px auto 0 auto;
+		margin: 0 auto;
+
+		transform: translateZ(30px);
 
 		@include media('max', 'sm') {
 			margin-top: 0;
@@ -383,25 +405,40 @@
 	}
 
 	&__tag {
-		padding: 5px 10px;
-		font-size: 12px;
-		margin: 5px 5px;
+		@include accent-button;
+
 		opacity: 0;
 		transform: translateY(-15px);
-		transition: .1s ease-in;
+		transition: .1s ease-in-out;
+		transition-property: transform, opacity;
+		margin: 7px 5px;
+		padding: 5px 15px;
+		box-sizing: border-box;
+		font-size: $tag-size;
+
+		@include media('max', 'sm') {
+			margin: 3px;
+			padding: 5px 10px;
+			font-size: $tag-sm-size;
+		}
+
+		p {
+			padding: 0;
+			margin: 0;
+		}
 	}
 
 	&__button {
-		cursor: pointer;
+		@include accent-button;
+
 		padding: 10px 18px;
+		color: $accent-color;
+		font-size: $tag-size;
+		min-width: 120px;
 		margin: 10px 5px;
-		font-weight: bold;
-		font-size: 11px;
-		text-transform: uppercase;
-		background-color: $accent-color;
-		border-radius: 5px;
+		border: 1px solid $accent-color;
 		transform: translateY(50px);
-		transition: .2s ease-in;
+		transition: transform .2s ease-in;
 
 		@include media('max', 'sm') {
 			padding: 7px 13px;
@@ -412,112 +449,55 @@
 }
  
 // footer
-/*
 .footer {
 	text-align: center;
-	color: #fff;
-	margin: 70px 0;
+	margin-top: 70px;
 
 	h2 {
-		font-size: 30px;
-		font-weight: 300;
+		@include main-title;
+		text-align: left;
 	}
 
 	&__socials {
 		display: flex;
-		flex-direction: row;
 		justify-content: center;
-		
+		margin-top: 30px;
+		margin-bottom: 70px;
+
 		@include media('max', 'sm') {
 			flex-direction: column;
-			justify-content: center;
-			align-items: center;
+			margin-bottom: 30px;
 		}
 	}
 
 	&__link {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 5px;
-		width: 150px;
-		height: 40px;
-		background-color: $accent-color;
-		margin: 0 10px;
+		@include accent-button;
 		text-decoration: none;
-		font-family: 'Open Sans', sans-serif;
+		margin: 0 7.5px;
 
-		
 		@include media('max', 'sm') {
-			margin-top: 10px;
+			margin: 7.5px 0;
 		}
 
 		p {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			margin: 0;
-			padding: 0;
+			padding: 10px 40px;
+			font-weight: bold;
+			font-size: $footer-link-size;
+			font-family: $term-font;
+
+			svg {
+				margin-left: 10px;
+				width: 25px !important;
+				height: 25px !important;
+				color: #fff;
+			}
 		}
-
-		i {
-			font-size: 18px;
-			margin: 0;
-			padding: 0;
-			margin-left: 10px;
-		}
-	}
-
-	&__link:nth-child(1) {
-		background-color: #F5F5F5;
-		color: #000;
-	}
-	
-	&__link:nth-child(2) {
-		background-color: #0088CC;
-		color: #fff;
-	}
-	
-	&__link:nth-child(3) {
-		background-color: #DD4B39;
-		color: #fff;
 	}
 }
-*/
-
-// animations
-@keyframes popUp {
-	0% {
-		transform: translateY(-15px);
-	}
-
-	30% {
-		transform: translateY(-7px);
-	}
-
-	50% {
-		transform: tarnslateY(0px);
-	}
-
-	99% {
-		transform: translateY(2px);
-	}
-
-	100% {
-		transform: translateY(0px);
-	}
-}
-
-// pulse 
-@keyframes pulse{
-	0%{
-		transform: scale(1);
-	}
-	100%{
-		transform: scale(3);
-		background-color: #fff;
-		opacity: 0;
-	}
-}
-
-
 
 // components
 .terminal {
@@ -591,7 +571,7 @@
 		font-family: $term-font;
 		color: $accent-color;
 		font-weight: bold;
-		font-size: 12.5px;
+		font-size: $terminal-size;
 		min-height: 300px;
 
 		p {

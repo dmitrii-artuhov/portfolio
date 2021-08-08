@@ -89,40 +89,6 @@ const animateTerminalTyping = () => {
 	typer.type();
 }
 
-class TextSwapper {
-	constructor(txtElement, alphabet) {
-		this.txtElement = txtElement;
-		this.alphabet = alphabet;
-		this.txt = '';
-		this.fulltxt = txtElement.innerHTML;
-	}
-
-	swap = () => {
-		let textIndex, alphabetIndex;
-		do {
-			textIndex = getRandomNumber(0, this.fulltxt.length - 1);
-			alphabetIndex = getRandomNumber(0, this.alphabet.length - 1);
-		}
-		while (this.fulltxt[textIndex] === ' ');
-
-		this.txt = this.fulltxt.substring(0, textIndex) + `<span class="highlight-text">${this.alphabet[alphabetIndex]}</span>` + this.fulltxt.substring(textIndex + 1);
-		
-		this.txtElement.innerHTML = this.txt;
-
-		setTimeout(this.swap, 300);
-	}
-}
-
-// terminal text swaping
-const animateTerminalTextSwap = () => {
-	const txtElement = document.querySelector('.terminal__body p span.text-swap');
-	const swapAlphabet = 'ﾊﾐﾋｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ';
-
-	const swapper = new TextSwapper(txtElement, swapAlphabet);
-	swapper.swap();
-}
-
-
 // parallax on the homepage banner
 const animateBannerWithParallax = () => {
 	const thresholdWidth = 1200;
@@ -169,13 +135,73 @@ const animateBannerWithParallax = () => {
 	}
 }
 
+// tilt on the projects
+const animateProjectsTilt = () => {
+	const projects = document.querySelectorAll('.projects__block');
+	const thresholdWidth = 1200;
+	// init tilt js
+	const params = {
+		scale: 1.1,
+		reverse: true,
+		max: 10,
+		perspective: 1400,
+		speed: 200
+	}
+
+	projects.forEach((project) => {
+		VanillaTilt.init(project, params);
+	});
+
+	window.addEventListener('resize', () => {
+
+		if (window.innerWidth < thresholdWidth) {	
+			projects.forEach((project) => {
+				if (project.vanillaTilt) {
+					project.vanillaTilt.destroy();
+				}
+			});
+		}
+		else {
+			projects.forEach((project) => {
+				VanillaTilt.init(project, params);
+			});
+		}
+	});
+
+	if (window.innerWidth < thresholdWidth) {	
+		projects.forEach((project) => {
+			if (project.vanillaTilt) {
+				project.vanillaTilt.destroy();
+			}
+		});
+	}
+	else {
+		projects.forEach((project) => {
+			VanillaTilt.init(project, params);
+		});
+	}
+}
+
+// animate tags
+const animateTagsPopin = () => {
+	// animation for tags
+	const projects = document.querySelectorAll('.projects__tags');
+	const delay = 0.05;
+
+	projects.forEach((item) => {
+		for(let i = 0; i < item.children.length; i++) {
+			item.children[i].style.transitionDelay = `${i * delay}s`;
+		}
+	});
+}
 
 const setAnimations = () => {
 	// call functions
 	animateMenuItems(500, 200, 200);
 	animateTerminalTyping();
 	animateBannerWithParallax();
-	// animateTerminalTextSwap();
+	animateProjectsTilt();
+	animateTagsPopin();
 }
 
 document.addEventListener('DOMContentLoaded', setAnimations);
