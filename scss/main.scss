@@ -149,6 +149,13 @@
 	perspective: 1400px;
 	transform-style: preserve-3d;
 
+	#matrix {
+		position: absolute;
+		transform: translateZ(-130px);
+		z-index: -1;
+		top: 0;
+	}
+
 	&__wrapper {
 		display: flex;
 		padding: 50px 0;
@@ -612,6 +619,95 @@
 			background-color: $terminal-cursor-color;
 			transform: translateY(1px);
 			animation: terminal-cursor .5s steps(5, start) infinite;
+		}
+	}
+}
+
+
+.text-glitch {
+  position: relative;
+
+	&:after, &:before {
+		content: attr(data-text);
+		position: absolute;
+		top:0;
+		color:$accent-light-color;
+		background:black;
+		overflow:hidden;
+		clip:rect(0,900px,0,0); 
+	}
+
+	&:after {
+		left: 1px;
+		text-shadow: -1px 0 $accent-faded-color;
+		// animation: noise-anim-1 1s infinite linear alternate-reverse;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate-reverse;
+		animation-timing-function: linear;
+	}
+
+	&:before {
+		left: -1px;
+		text-shadow:1px 0 white; 
+		// animation: noise-anim-1 2s infinite linear alternate-reverse;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate-reverse;
+		animation-timing-function: linear;
+	}
+
+	&.noise-anim-1 {
+		&:after {
+			animation-name: noise-anim-1;
+		}
+		&:before {
+			animation-name: noise-anim-1;
+		}
+	}
+
+	&.noise-anim-2 {
+		&:after {
+			animation-name: noise-anim-2;
+		}
+		&:before {
+			animation-name: noise-anim-2;
+		}
+	}
+
+	&.noise-anim-3 {
+		&:after {
+			animation-name: noise-anim-3;
+		}
+		&:before {
+			animation-name: noise-anim-3;
+		}
+	}
+
+	@keyframes noise-anim-1{
+		$steps:10;
+		@for $i from 0 through $steps{
+			#{percentage($i * (1 / (4 * $steps)))}{
+				clip:rect(random(10) + px, 9999px, random(10) + px, 0);
+			}
+		}
+	}
+
+	@keyframes noise-anim-2{
+		$steps:10;
+		@for $i from 0 through $steps{
+			#{percentage($i * (1 / (2 * $steps)))}{
+				clip:rect(random(5) + px, 9999px, random(5) + px, 0);
+			}
+		}
+	}
+
+	@keyframes noise-anim-3{
+		$steps:10;
+		@for $i from 0 through $steps{
+			#{percentage($i * (1 / (16 * $steps)))}{
+				clip:rect(random(10) + px, 9999px, random(10) + px, 0);
+			}
 		}
 	}
 }

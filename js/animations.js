@@ -93,25 +93,30 @@ class TextSwapper {
 	constructor(txtElement, alphabet) {
 		this.txtElement = txtElement;
 		this.alphabet = alphabet;
-		this.txt = txtElement.innerText;
+		this.txt = '';
+		this.fulltxt = txtElement.innerHTML;
 	}
 
 	swap = () => {
-		const textIndex = getRandomNumber(0, this.txtElement.innerText.length);
-		const alphabetIndex = getRandomNumber(0, this.alphabet.length);
+		let textIndex, alphabetIndex;
+		do {
+			textIndex = getRandomNumber(0, this.fulltxt.length - 1);
+			alphabetIndex = getRandomNumber(0, this.alphabet.length - 1);
+		}
+		while (this.fulltxt[textIndex] === ' ');
 
-		console.log(this.txt[0])
-		this.txt[textIndex] = this.alphabet[alphabetIndex];
-		this.txtElement.innerText = this.txt;
+		this.txt = this.fulltxt.substring(0, textIndex) + `<span class="highlight-text">${this.alphabet[alphabetIndex]}</span>` + this.fulltxt.substring(textIndex + 1);
+		
+		this.txtElement.innerHTML = this.txt;
 
-		setTimeout(this.swap, 400);
+		setTimeout(this.swap, 300);
 	}
 }
 
 // terminal text swaping
 const animateTerminalTextSwap = () => {
 	const txtElement = document.querySelector('.terminal__body p span.text-swap');
-	const swapAlphabet = '日ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ';
+	const swapAlphabet = 'ﾊﾐﾋｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ';
 
 	const swapper = new TextSwapper(txtElement, swapAlphabet);
 	swapper.swap();
@@ -120,7 +125,7 @@ const animateTerminalTextSwap = () => {
 
 // parallax on the homepage banner
 const animateBannerWithParallax = () => {
-	const thresholdWidth = 1400;
+	const thresholdWidth = 1200;
 	const scene = document.getElementById('scene-1');
 	let parallaxInstance = new Parallax(scene, {
 		hoverOnly: true,
@@ -170,7 +175,7 @@ const setAnimations = () => {
 	animateMenuItems(500, 200, 200);
 	animateTerminalTyping();
 	animateBannerWithParallax();
-	animateTerminalTextSwap();
+	// animateTerminalTextSwap();
 }
 
 document.addEventListener('DOMContentLoaded', setAnimations);

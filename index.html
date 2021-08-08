@@ -18,9 +18,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./webkit/fonts/stylesheet.css">
-
-	<!-- Parallax.js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 	<title>Portfolio</title>
 </head>
 <body>
@@ -56,14 +53,16 @@
 			</div>
 		</header>
 
-		<section class="about">
+		<section id="about" class="about">
+			<!-- <img class="about__bg" src="./imgs/matrix.png" alt="matrix"> -->
+
 			<div style="max-width: 1400px;" class="container">
 				<div id="scene-1" class="about__wrapper">
-					<div data-offset-x="450" data-offset-y="0" data-depth="0.4" class="about__picture">
+					<div data-offset-x="450" data-offset-y="0" data-depth="0.2" class="about__picture">
 						<img src="./imgs/anime-waifu.png" alt="waifu">
 					</div>
 
-					<div data-offset-x="120" data-offset-y="80" data-depth="0.5" class="about__term terminal">
+					<div data-offset-x="120" data-offset-y="80" data-depth="0.3" class="about__term terminal">
 						<div class="terminal__header">
 							<div class="terminal__controls">
 								<button class="terminal__close"></button>
@@ -74,19 +73,18 @@
 
 						<div class="terminal__body">
 							<p>
-								<span class="text-swap">
-								Processes: 210 total, 2 running, 9 stuck, 199 sleeping, 901 threads    23:30:03 <br>
-								Load Avg: 1.40, 1.75, 1.00  CPU usage: 4.15% user, 4.40% sys, 91.44% idle <br>
-								Networks: packets: 12105/8925K in, 11907/1964 K out. <br>
-								Disks: 80156/2205M read, 21235/425M written. <br>
+								Processes: 210 total, 2 running, 9 stuck, 199 sleeping <span data-text="23:30:03" class="text-glitch noise-anim-1">23:30:03</span> <br>
+								Load Avg: 1.40, 1.75, 1.00 CPU usage: 4.15% user, 4.40% sys, 91.4<span data-text="4% idle" class="text-glitch noise-anim-1">4% idle</span> <br>
+								Networks: packets: <span data-text="12105/8925K" class="text-glitch noise-anim-2">12105/8925K</span> in, 11907/1964 K out. <br>
+								Disks: <span data-text="80156/2205M" class="text-glitch noise-anim-2">80156/2205M</span> read, <span data-text="21235/425M" class="text-glitch noise-anim-2">21235/425M</span> written. <br>
 								<br>
 								Dmitrii-MacBook-Desctop:~ geek$ <br>
 								<br>
 								[dmitrii@art ~]$ <br>
-								[dmitrii@art ~]$ Welcome to my web site!
+								[dmitrii@art ~]$ <span data-text="Welcome" class="text-glitch noise-anim-3">Welcome</span> to my web site!
 								<!-- <span class="highlight-text">ﾐﾋｰｳｼﾅﾓﾆｻﾜﾐﾋｰｳｼﾅﾓﾆｻﾜ</span> -->
 								<br>
-								[dmitrii@art ~]$</span> <span class="txt-type" data-wait="3000" data-words='["Enjoy!", "Or may be not...", "What am I doing?!"]'></span> <br>
+								[dmitrii@art ~]$ <span class="txt-type" data-wait="3000" data-words='["Enjoy!", "Or may be not...", "What am I doing?!"]'></span> <br>
 								<br>
 								<br>
 								<br>
@@ -214,11 +212,12 @@
 	<script src="./js/utils.js"></script>
 	<script src="./js/index.js"></script>
 	<script src="./js/animations.js"></script>
-	<script src="https://kit.fontawesome.com/2fd836de1e.js" crossorigin="anonymous"></script>
+	<script src="./js/matrix.js"></script>
 
 	<!-- Libs -->
 	<script src="libs/parallax-js/parallax.js"></script>
 	<script src="libs/tilt-js/tilt.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
 
 
 </body>
