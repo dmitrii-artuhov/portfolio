@@ -43,7 +43,7 @@ function draw() {
 	});
 }
 
-function Symbol(x, y, speed, first, opacity) {
+function MatrixSymbol(x, y, speed, first, opacity) {
 	this.x = x;
 	this.y = y;
 	this.value;
@@ -84,7 +84,7 @@ function Stream() {
 		var opacity = 100;
 		var first = round(getRandomNumber(0, 4)) == 1;
 		for (var i = 0; i <= this.totalSymbols; i++) {
-			symbol = new Symbol(
+			var symbol = new MatrixSymbol(
 				x,
 				y,
 				this.speed,
