@@ -297,8 +297,11 @@
 		}
 
 		@include media('max', 'xl') {
-
 			transform: translateZ(0) rotateY(0deg) scale(1) !important;
+		}
+
+		@include media('max', 'md') {
+			padding: 7.5px 0;
 		}
 	}
 
@@ -475,6 +478,12 @@
 		text-decoration: none;
 		margin: 0 7.5px;
 
+		&:hover {
+			svg path {
+				fill: #fff;
+			}
+		}
+
 		@include media('max', 'sm') {
 			margin: 7.5px 0;
 		}
@@ -493,7 +502,6 @@
 				margin-left: 10px;
 				width: 25px !important;
 				height: 25px !important;
-				color: #fff;
 			}
 		}
 	}
@@ -503,7 +511,7 @@
 .terminal {
 	filter: drop-shadow(0px 20px 35px rgba(0, 0, 0, 0.5));
 	color: $accent-color;
-	max-width: 750px;
+	max-width: 514px;
 	overflow: hidden;
 
 	// header
@@ -573,6 +581,10 @@
 		font-weight: bold;
 		font-size: $terminal-size;
 		min-height: 300px;
+
+		@include media('max', 'sm') {
+			height: 330px;
+		}
 
 		p {
 			margin: 0;

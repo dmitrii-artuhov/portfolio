@@ -30,3 +30,19 @@ if (menuItems) {
 		});
 	});
 }
+
+if (modalButton) {
+	window.addEventListener('click', (e) => {
+		const matchedElement = e.target.closest('.header__modal-btn, .header__nav'); 
+		
+		if (!matchedElement) {
+			if (menu) {
+				menu.classList.remove('active');
+			}
+
+			if (modalButton) {
+				modalButton.classList.remove('active');
+			}
+		}
+	});
+}

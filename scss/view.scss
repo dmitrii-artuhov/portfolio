@@ -1,113 +1,108 @@
-$header-color: #0D0D0D;
-$bg-color: #262626;
-$accent-color: #F2F2F2;
+@import './mixins.scss';
+@import './variables.scss';
 
-// 
-.view {
-	margin: 0;
-
-	&__wrapper {
-		padding: 40px 10px;
-		box-sizing: border-box;
+.work {
+	h2 {
+		@include main-title;
 	}
 
-	&__info {
-		font-family: 'Montserrat', sans-serif;
-		flex-basis: 60%;
-
-		h1 {
-			margin: 0 0 15px 0;
-			color: #fff;
-			letter-spacing: 1px;
-			font-size: 30px;
-		}
-
-		p {
-			margin: 15px 0;
-			color: #fff;
-			opacity: .7;
-			font-size: 16px;
-			line-height: 150%;
-			max-width: 450px;
-		}
+	h3 {
+		@include secondary-title;
+		margin-top: 40px;
 	}
 
-	&__button {
-		padding: 12px 18px;
-		margin: 10px 5px;
+	p {
+		max-width: 800px;
+		color: $accent-color;
+		font-family: $term-font;
 		font-weight: bold;
-		font-size: 12px;
-		text-transform: uppercase;
-		background-color: $accent-color;
-		border-radius: 5px;
-	}
-}
+		font-size: $view-lg-font;
+		margin: 20px 0;
+		line-height: 150%;
 
-
-// show
-.show {
-	margin-bottom: 50px;
-}
-
-// desc
-.desc {
-	&__wrapper {
-		padding: 40px 10px 0 10px;
-		box-sizing: border-box;
-	}
-
-	&__about {
-		font-family: 'Montserrat', sans-serif;
-
-		h3 {
-			margin: 0 0 15px 0;
-			color: #fff;
-			letter-spacing: 1px;
-			font-size: 25px;
-		}
-
-		p {
-			margin: 20px 0;
-			color: #fff;
-			opacity: .7;
-			font-size: 16px;
-			line-height: 150%;
-			max-width: 800px;
+		@include media('max', 'sm') {
+			font-size: $view-sm-font;
 		}
 	}
 
-	&__tech {
-		font-family: 'Montserrat', sans-serif;
-		margin-top: 50px;
-
-		h3 {
-			margin: 0 0 15px 0;
+	a {
+		color: $accent-color;
+		&:hover {
 			color: #fff;
-			letter-spacing: 1px;
-			font-size: 25px;
 		}
 	}
 
-	&__langs {
+	ul {
+		color: $accent-color;
+		font-family: $term-font;
+		font-size: $view-lg-font;
 		padding: 0;
 		list-style: none;
+		line-height: 150%;
+		margin: 20px 0;
+		font-weight: bold;
+
+		@include media('max', 'sm') {
+			font-size: $view-sm-font;
+		}
 
 		li {
-			color: #fff;
 			position: relative;
 			display: flex;
 			align-items: center;
-			opacity: .5;
-			margin: 10px 0;
 
 			&::before {
-				content: '';
 				position: relative;
-				margin-right: 10px;
-				width: 7px;
-				height: 7px;
-				border-radius: 50%;
+				display: block;
+				margin-right: 15px;
+				content: '';
+				width: 8px;
+				height: 8px;
 				background-color: $accent-color;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	&__excerpt {
+		max-width: 640px;
+	}
+
+	&__buttons {
+		margin-top: 10px;
+		display: flex;
+		flex-wrap: wrap;
+
+		@include media('max', 'sm') {
+			flex-direction: column;
+		}
+
+		a {
+			@include accent-button;
+			text-decoration: none;
+			padding: 0;
+			margin: 7.5px 0;
+			text-align: center;
+
+			 
+			&:first-child {
+				margin-right: 20px;
+
+				@include media('max', 'sm') {
+					margin-right: 0;
+				}
+			}
+
+			&:hover {
+				p {
+					color: #fff;
+				}
+			}
+
+			p {
+				margin: 0;
+				font-size: $view-button-lg-size;
+				padding: 10px 20px;
 			}
 		}
 	}
@@ -116,7 +111,8 @@ $accent-color: #F2F2F2;
 /* external css: flickity.css */
 
 .carousel {
-  background: $bg-color;
+  background: transparent;
+	margin: 60px 0;
 }
 
 .carousel-cell {

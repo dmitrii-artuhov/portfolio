@@ -81,6 +81,8 @@ class TypeWriter {
 // terminal typing
 const animateTerminalTyping = () => {
 	const txtElement = document.querySelector('.terminal .txt-type');
+	if (!txtElement) return;
+
 	const words = JSON.parse(txtElement.getAttribute('data-words'));
 	const wait = txtElement.getAttribute('data-wait');
 
@@ -93,6 +95,9 @@ const animateTerminalTyping = () => {
 const animateBannerWithParallax = () => {
 	const thresholdWidth = 1200;
 	const scene = document.getElementById('scene-1');
+
+	if (!scene) return;
+
 	let parallaxInstance = new Parallax(scene, {
 		hoverOnly: true,
 		invertX: true
@@ -138,6 +143,9 @@ const animateBannerWithParallax = () => {
 // tilt on the projects
 const animateProjectsTilt = () => {
 	const projects = document.querySelectorAll('.projects__block');
+
+	if (!projects) return;
+
 	const thresholdWidth = 1200;
 	// init tilt js
 	const params = {
@@ -186,6 +194,8 @@ const animateProjectsTilt = () => {
 const animateTagsPopin = () => {
 	// animation for tags
 	const projects = document.querySelectorAll('.projects__tags');
+	if (!projects) return;
+
 	const delay = 0.05;
 
 	projects.forEach((item) => {

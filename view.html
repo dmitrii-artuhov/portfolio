@@ -4,100 +4,169 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<!-- Styles -->
-	<link rel="stylesheet" href="./css/main.min.css">
-	<link rel="stylesheet" href="./css/default.min.css">
-	<link rel="stylesheet" href="./css/view.min.css">
-	<!-- Media -->
-	<link rel="stylesheet" href="./css/media.min.css">
+
+		<!-- Styles -->
+		<link rel="stylesheet" href="./css/main.css">
+		<link rel="stylesheet" href="./css/default.css">
+		<link rel="stylesheet" href="./css/mixins.css">
+		<link rel="stylesheet" href="./css/variables.css">
+		<link rel="stylesheet" href="./css/animations.css">
+		<link rel="stylesheet" href="./css/view.css">
+
 	<!-- Google Fonts -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet"> -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">	
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./webkit/fonts/stylesheet.css">
+
 	<!-- Flickity Slider -->
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	<title>View</title>
 </head>
 <body>
-	<header class="header">
-		<div class="container">
-			<div class="header__wrapper">
-				<div class="header__logo">
-					<!-- <img src="./imgs/logo.svg" alt="logo"> -->
-				</div>
-				<div class="header__nav">
-					<a href="#footer"><button class="header__button button">contact</button></a>
-				</button>
-			</div>
-		</div>
-	</header>
-
-	<section class="view">
-		<div class="container">
-			<div class="view__wrapper">
-				<div class="view__info">
-					<h1>Full-stack Web App</h1>
-					<p>Web App Desktop react javascript web application build on top of the Electron framework.</p>
-					<a href="#"><button class="view__button button">see online</button></a>
-					<a href="#"><button class="view__button button">see github</button></a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="show">
-		<div class="container">
-			<div class="carousel">
-				<div class="carousel-cell">
-					<img src="./imgs/project.jpg" alt="orange tree" />
-				</div>
-				<div class="carousel-cell">
-					<img src="./imgs/project2.jpg" alt="One World Trade" />
-				</div>
-				<div class="carousel-cell">
-					<img src="./imgs/project.jpg" alt="drizzle" />
+	<div class="wrapper">	
+		<header class="header">
+			<div class="container header__container">
+				<div class="header__wrapper">
+					<a href="./index.html" class="header__logo">
+						<img src="./imgs/Logo.svg" alt="logo">
+					</a>
+					
+					<div class="header__modal-btn">
+						<span></span>
+						<span></span>
+					</div>
+					<div class="header__nav">
+						<a href="#footer" class="header__item">
+							контакты
+							<span></span>
+							<span></span>
+						</a>
+						<a href="#blog" class="header__item">
+							блог
+							<span></span>
+							<span></span>
+						</a>
+						<a href="#projects" class="header__item">
+							работы
+							<span></span>
+							<span></span>
+						</a>
 				</div>
 			</div>
-		</div>
+		</header>
 
-	</section>
 
-	<section class="desc">
-		<div class="container">
-			<div class="desc__wrapper">
-				<div class="desc__about">
-					<h3>About this project</h3>
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe quis explicabo vitae hic magni voluptatem eius, rem amet sequi facilis ullam aut? Quisquam facere autem recusandae distinctio expedita, suscipit asperiores odio cupiditate officia velit. Cupiditate molestiae, tenetur, quam minus rem reprehenderit sunt in iure, quae ullam error. Facilis, explicabo laudantium.
-					</p>
-					<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Id natus, dolore doloremque atque minus sint cumque veniam similique autem neque quo est esse accusantium quaerat quas velit minima ipsam commodi quibusdam ullam doloribus! Vero iusto, explicabo harum et eveniet eius? Possimus, beatae. Esse libero nisi incidunt impedit rerum magnam perspiciatis.
-					</p>
-				</div>
-				<div class="desc__tech">
-					<h3>Technologies</h3>
-					<ul class="desc__langs">
-						<li>Javascript ES6</li>
-						<li>React</li>
-						<li>Redux</li>
+		<section class="work">
+			<div class="container">
+				<h2>О Работе</h2>
+
+				<div class="work__content">
+					<h3 class="work__title">Gengo - programming language</h3>
+					<p class="work__excerpt">Адаптивный под мобильные устройства конфигуратор VPS пакетов для провайдера VPS хостингов.</p>
+
+					<div class="work__buttons">
+						<a target="_blank" href="https://github.com/" class="work__button">
+							<p>
+								Открыть Github					
+							</p>
+						</a>
+
+						<a target="_blank" href="https://www.google.ru/" class="work__button">
+							<p>
+								Посмотреть онлайн					
+							</p>
+						</a>
+					</div>
+
+					
+					<div class="carousel">
+						<div class="carousel-cell">
+							<img src="./imgs/project.jpg" alt="orange tree" />
+						</div>
+						<div class="carousel-cell">
+							<img src="./imgs/project2.jpg" alt="One World Trade" />
+						</div>
+						<div class="carousel-cell">
+							<img src="./imgs/project.jpg" alt="drizzle" />
+						</div>
+					</div>
+
+					<h3>Детали</h3>
+					<p>Необходимо было придумать дизайн для конфигуратора, сверстать его, добавив адаптивность под смартфоны, и реализовать функционал на JavaScript (JQuery).</p>
+					
+					<p>В работу также входило: разбиение процесса аренды VPS серверов на стадии в конфигураторе, <a href="https://calendar.google.com/calendar/u/0/r/week">Пеерейти по ссылке</a> реализация плавной слайд-анимации между стадиями, общий подсчет стоимости выбранных пользователем модулей.</p>
+					
+					<p>Полученный конфигуратор необходимо было перенести на MODX, связав со сторонним сайтом заказчика. Была активная работа с WHMCS.</p>
+
+					<h3>Технологии</h3>
+					<ul>
 						<li>NodeJS</li>
-						<li>Express</li>
+						<li>ReactJS</li>
+						<li>JWT Auth</li>
+						<li>MongoDB</li>
 					</ul>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+		
 
-	<footer class="footer" id="footer">
-		<div class="container">
-			<h2>Reach out</h2>
-			<div class="footer__socials">
-				<a href="#" class="footer__link"><p>Github<i class="fab fa-github"></i></p></a>
-				<a href="#" class="footer__link"><p>Telegram<i class="fab fa-telegram-plane"></i></p></a>
-				<a href="#" class="footer__link"><p>Gmail<i class="fab fa-google"></i></p></a>
+		<footer class="footer" id="footer">
+			<div class="container">
+				<h2>Контакты</h2>
+				<div class="footer__socials">
+					<a href="#" class="footer__link">
+						<p>
+							Github
+							<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15 0C6.76117 0 0 6.76117 0 15C0 22.0306 4.93332 28.4171 11.4844 30V25.0374C10.8353 25.1795 10.2379 25.1836 9.5771 24.9889C8.69064 24.7272 7.97035 24.1367 7.43568 23.2363C7.09488 22.6614 6.49086 22.0379 5.86075 22.0837L5.70625 20.3327C7.06879 20.216 8.24753 21.1629 8.94722 22.3384C9.25804 22.8612 9.61578 23.1676 10.0749 23.3031C10.5187 23.4338 10.9953 23.3711 11.5505 23.175C11.6899 22.0633 12.1992 21.6472 12.5839 21.0612V21.0603C8.67691 20.4776 7.11983 18.4048 6.50185 16.7688C5.68291 14.5965 6.12236 11.8826 7.5705 10.1676C7.59865 10.1342 7.64946 10.0468 7.62978 9.98566C6.96579 7.97997 7.77489 6.3208 7.80464 6.14479C8.57094 6.37138 8.69545 5.91682 11.1333 7.39792L11.5546 7.65106C11.7309 7.75612 11.6755 7.69615 11.8517 7.68288C12.8696 7.40639 13.9426 7.25372 14.9998 7.23999C16.065 7.25372 17.1311 7.40639 18.1911 7.69409L18.3275 7.70782C18.3156 7.70599 18.3646 7.69913 18.4467 7.65015C21.492 5.80559 21.3826 6.40846 22.1992 6.14296C22.2288 6.3192 23.0271 8.00537 22.3702 9.98566C22.2816 10.2585 25.0104 12.7572 23.4979 16.7681C22.8799 18.4048 21.3231 20.4776 17.4161 21.0603V21.0612C17.9169 21.8246 18.5186 22.2306 18.5154 23.8053V30C25.0667 28.4171 29.9998 22.0306 29.9998 15C30 6.76117 23.2388 0 15 0V0Z" fill="#30E52F"/>
+							</svg>								
+						</p>
+					</a>
+					<a href="#" class="footer__link">
+						<p>
+							Telegram
+							<svg width="30" height="30" viewBox="0 0 30 30" fill="white" xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0)">
+								<path d="M11.7712 18.9763L11.275 25.9563C11.985 25.9563 12.2925 25.6513 12.6612 25.285L15.99 22.1038L22.8875 27.155C24.1525 27.86 25.0437 27.4888 25.385 25.9913L29.9125 4.77627L29.9137 4.77502C30.315 2.90502 29.2375 2.17377 28.005 2.63252L1.39248 12.8213C-0.423772 13.5263 -0.396272 14.5388 1.08373 14.9975L7.88748 17.1138L23.6912 7.22502C24.435 6.73252 25.1112 7.00502 24.555 7.49752L11.7712 18.9763Z" fill="#30E52F"/>
+								</g>
+								<defs>
+								<clipPath id="clip0">
+								<rect width="30" height="30" fill="white"/>
+								</clipPath>
+								</defs>
+							</svg>								
+						</p>
+					</a>
+					<a href="#" class="footer__link">
+						<p>
+							Gmail
+							<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0)">
+								<path d="M6.64863 18.1293L5.60438 22.0277L1.78764 22.1084C0.646992 19.9928 0 17.5722 0 14.9999C0 12.5126 0.604922 10.1669 1.67719 8.10156H1.67801L5.07598 8.72453L6.56449 12.1021C6.25295 13.0104 6.08314 13.9854 6.08314 14.9999C6.08326 16.101 6.28271 17.156 6.64863 18.1293Z" fill="#30E52F"/>
+								<path d="M29.738 12.1978C29.9102 13.1051 30.0001 14.0422 30.0001 14.9999C30.0001 16.0738 29.8872 17.1214 29.6721 18.1318C28.9419 21.5703 27.0339 24.5728 24.3908 26.6975L24.39 26.6967L20.11 26.4783L19.5043 22.6969C21.2581 21.6684 22.6287 20.0587 23.3507 18.1318H15.3298V12.1978H23.4677H29.738Z" fill="#30E52F"/>
+								<path d="M24.3898 26.6967L24.3906 26.6975C21.82 28.7637 18.5546 30 15 30C9.2876 30 4.32113 26.8071 1.7876 22.1085L6.64859 18.1294C7.91533 21.5101 11.1766 23.9168 15 23.9168C16.6433 23.9168 18.1829 23.4725 19.5041 22.697L24.3898 26.6967Z" fill="#30E52F"/>
+								<path d="M24.5744 3.45328L19.715 7.43156C18.3478 6.57691 16.7315 6.0832 14.9999 6.0832C11.09 6.0832 7.76777 8.60022 6.56449 12.1022L1.67794 8.10164H1.67712C4.17357 3.28846 9.20267 0 14.9999 0C18.6395 0 21.9766 1.29645 24.5744 3.45328Z" fill="#30E52F"/>
+								</g>
+								<defs>
+								<clipPath id="clip0">
+								<rect width="30" height="30" fill="white"/>
+								</clipPath>
+								</defs>
+							</svg>								
+						</p>
+					</a>
+				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
+	</div>	
+
 
 	
+	<script src="./js/utils.js"></script>
+	<script src="./js/index.js"></script>
+	<script src="./js/animations.js"></script>
 	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 	<script src="js/slider.js"></script>
 </body>

@@ -1,94 +1,72 @@
-.view {
-  margin: 0;
-}
-
-.view__wrapper {
-  padding: 40px 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.view__info {
-  font-family: 'Montserrat', sans-serif;
-  -ms-flex-preferred-size: 60%;
-      flex-basis: 60%;
-}
-
-.view__info h1 {
-  margin: 0 0 15px 0;
+.work h2 {
+  font-size: 56px;
+  font-weight: 900;
+  margin-bottom: 0;
   color: #fff;
-  letter-spacing: 1px;
-  font-size: 30px;
 }
 
-.view__info p {
-  margin: 15px 0;
+@media only screen and (max-width: 576px) {
+  .work h2 {
+    font-size: 36px;
+  }
+}
+
+.work h3 {
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 0;
   color: #fff;
-  opacity: .7;
-  font-size: 16px;
-  line-height: 150%;
-  max-width: 450px;
+  margin-top: 40px;
 }
 
-.view__button {
-  padding: 12px 18px;
-  margin: 10px 5px;
-  font-weight: bold;
-  font-size: 12px;
-  text-transform: uppercase;
-  background-color: #F2F2F2;
-  border-radius: 5px;
+@media only screen and (max-width: 576px) {
+  .work h3 {
+    font-size: 24px;
+  }
 }
 
-.show {
-  margin-bottom: 50px;
-}
-
-.desc__wrapper {
-  padding: 40px 10px 0 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.desc__about {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.desc__about h3 {
-  margin: 0 0 15px 0;
-  color: #fff;
-  letter-spacing: 1px;
-  font-size: 25px;
-}
-
-.desc__about p {
-  margin: 20px 0;
-  color: #fff;
-  opacity: .7;
-  font-size: 16px;
-  line-height: 150%;
+.work p {
   max-width: 800px;
+  color: #30E52F;
+  font-family: "Consolas", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px 0;
+  line-height: 150%;
 }
 
-.desc__tech {
-  font-family: 'Montserrat', sans-serif;
-  margin-top: 50px;
+@media only screen and (max-width: 576px) {
+  .work p {
+    font-size: 18px;
+  }
 }
 
-.desc__tech h3 {
-  margin: 0 0 15px 0;
+.work a {
+  color: #30E52F;
+}
+
+.work a:hover {
   color: #fff;
-  letter-spacing: 1px;
-  font-size: 25px;
 }
 
-.desc__langs {
+.work ul {
+  color: #30E52F;
+  font-family: "Consolas", sans-serif;
+  font-size: 20px;
   padding: 0;
   list-style: none;
+  line-height: 150%;
+  margin: 20px 0;
+  font-weight: bold;
 }
 
-.desc__langs li {
-  color: #fff;
+@media only screen and (max-width: 576px) {
+  .work ul {
+    font-size: 18px;
+  }
+}
+
+.work ul li {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,23 +74,84 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  opacity: .5;
-  margin: 10px 0;
 }
 
-.desc__langs li::before {
-  content: '';
+.work ul li::before {
   position: relative;
-  margin-right: 10px;
-  width: 7px;
-  height: 7px;
+  display: block;
+  margin-right: 15px;
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #30E52F;
   border-radius: 50%;
-  background-color: #F2F2F2;
+}
+
+.work__excerpt {
+  max-width: 640px;
+}
+
+.work__buttons {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 576px) {
+  .work__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.work__buttons a {
+  cursor: pointer;
+  background-color: transparent;
+  color: #30E52F;
+  border: 1px solid #30E52F;
+  outline: none;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  padding: 0;
+  margin: 7.5px 0;
+  text-align: center;
+}
+
+.work__buttons a:hover {
+  color: #fff;
+  background-color: rgba(48, 229, 47, 0.3);
+}
+
+.work__buttons a:first-child {
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: 576px) {
+  .work__buttons a:first-child {
+    margin-right: 0;
+  }
+}
+
+.work__buttons a:hover p {
+  color: #fff;
+}
+
+.work__buttons a p {
+  margin: 0;
+  font-size: 20px;
+  padding: 10px 20px;
 }
 
 /* external css: flickity.css */
 .carousel {
-  background: #262626;
+  background: transparent;
+  margin: 60px 0;
 }
 
 .carousel-cell {

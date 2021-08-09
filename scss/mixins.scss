@@ -36,3 +36,14 @@ $sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
     font-size: $title-sm-size;
   }
 }
+
+@mixin secondary-title() {
+  font-size: $title-secondary-lg-size;
+  font-weight: 900;
+  margin-bottom: 0;
+  color: #fff;
+
+  @include media('max', 'sm') {
+    font-size: $title-secondary-sm-size;
+  }
+}
